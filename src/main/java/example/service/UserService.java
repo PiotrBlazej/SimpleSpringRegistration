@@ -2,12 +2,14 @@ package example.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import example.model.User;
 
 public interface UserService {
-	void saveUser(User user);
+	void saveUser(User user, HttpServletRequest request);
 	void activeUser(String token);
-	User finUserByEmail(String email);
+	User findUserByEmail(String email);
 	User findUserById(int id);
 	List<User> findAllUsers();
 	
